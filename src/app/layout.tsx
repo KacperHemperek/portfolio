@@ -1,8 +1,10 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Inter, Roboto_Mono } from 'next/font/google';
 import './globals.css';
 
 const inter = Inter({ subsets: ['latin'] });
+
+const roboto = Roboto_Mono({ subsets: ['latin'], variable: '--roboto-mono' });
 
 export const metadata: Metadata = {
   title: 'Kacper Hemperek - Software Engineer',
@@ -21,8 +23,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang='en' className='bg-background'>
-      <body className={inter.className}>{children}</body>
+    <html lang='en' className='bg-background text-white'>
+      <body className={`${inter.className} ${roboto.variable}`}>
+        <nav>test nav</nav>
+        {children}
+      </body>
     </html>
   );
 }
