@@ -25,7 +25,6 @@ export default function RootLayout({
   return (
     <html lang='en' className='bg-background text-white'>
       <body className={`${inter.className} ${roboto.variable}`}>
-        <nav>test nav</nav>
         {children}
       </body>
     </html>
