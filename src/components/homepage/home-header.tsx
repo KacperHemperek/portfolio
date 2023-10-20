@@ -7,10 +7,7 @@ import { socials } from '~/utils/socials';
 
 export default function HomeHeader() {
   return (
-    <header
-      id='header'
-      className='container mx-auto flex h-screen flex-col justify-center'
-    >
+    <header id='header' className='flex h-screen flex-col justify-center'>
       <h1 className='font-roboto pb-4 text-xs tracking-wide text-primary'>
         Hi, my name is
       </h1>
@@ -25,7 +22,10 @@ export default function HomeHeader() {
         I&#39;m currently working at{' '}
         <OutsideLink href='https://apptimia.com/'>Apptimia</OutsideLink>. I use
         React as my day to day tool for creating UIs. You can see all of my{' '}
-        <Highlight>projects</Highlight>
+        <Highlight>projects</Highlight> on github or check out my{' '}
+        <OutsideLink href='/#projects' openInNewTab={false}>
+          projects section
+        </OutsideLink>
       </p>
       <div className='flex gap-4'>
         <IconLink bordered href={socials.linkedin.url}>
