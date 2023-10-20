@@ -1,6 +1,6 @@
 import { GithubIcon, LinkedinIcon } from 'lucide-react';
 import React from 'react';
-import Highlight from '~/components/common/hightlight';
+import Highlight from '~/components/common/highlight';
 import IconLink from '~/components/common/icon-link';
 import OutsideLink from '~/components/common/outside-link';
 import { socials } from '~/utils/socials';
