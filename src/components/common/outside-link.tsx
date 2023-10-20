@@ -12,7 +12,7 @@ export default function OutsideLink({
   return (
     <a
       href={href}
-      className='cursor-pointer text-primary underline underline-offset-2 transition-colors hover:text-primary/80'
+      className='w-fit cursor-pointer text-primary underline underline-offset-2 transition-colors hover:text-primary/80'
       target={openInNewTab ? '_blank' : undefined}
     >
       {children}
