@@ -28,7 +28,7 @@ export default function HomeHeader() {
         </OutsideLink>
       </p>
       <div className='flex gap-4'>
-        <IconLink bordered href={socials.linkedin.url}>
+        <IconLink bordered href={socials.github.url}>
           <GithubIcon className='h-4 w-4 md:h-5 md:w-5' />
         </IconLink>
         <IconLink bordered href={socials.linkedin.url}>
