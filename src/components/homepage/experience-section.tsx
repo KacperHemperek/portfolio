@@ -13,13 +13,15 @@ export default function ExperienceSection() {
       startDate: 'October 2022',
       skills: [
         'React',
+        'Electron',
         'Angular 2+',
         'TypeScript',
         'styled-components',
-        'Material-UI',
+        'Angular Material',
+        'SASS',
       ],
       description:
-        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati harum, accusamus, repellat dolor vero hic quam quaerat dignissimos adipisci omnis nulla aut aliquid praesentium, voluptates laudantium reprehenderit at cumque distinctio.',
+        'Creating desktop application that is a part of a system used for testing RPAs with Electron, React and styled-components. Building block based UIs with react flow and using Electron APIs to read, save, translate files, capture desktop windows and much more. Maintaining angular application that is centered around working with a map and displaying data and photos on it. This application uses Mapbox GL JS, Angular Material and SASS.',
     },
     {
       number: '02',
@@ -30,7 +32,7 @@ export default function ExperienceSection() {
       endDate: 'July 2022',
       skills: ['React', 'TypeScript', 'TailwindCSS', 'Vue.js', 'Recharts'],
       description:
-        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati harum, accusamus, repellat dolor vero hic quam quaerat dignissimos adipisci omnis nulla aut aliquid praesentium, voluptates laudantium reprehenderit at cumque distinctio.',
+        'Building data driven applications with React and TypeScript. Creating reusable components and using TailwindCSS for styling. Creating graphs in React application with Recharts. Learning Vue.js and creating a simple application with it.',
     },
   ];
 

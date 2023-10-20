@@ -47,7 +47,7 @@ export default function WorkItem({
           {skills.map((skill, index) => (
             <TechTag
               title={skill}
-              key={'work__item__tag__' + companyName + '__' + skill}
+              key={'work__item__tag__' + companyName + '__' + skill + index}
             />
           ))}
         </div>
