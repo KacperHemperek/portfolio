@@ -20,8 +20,14 @@ export default function ExperienceSection() {
         'Angular Material',
         'SASS',
       ],
-      description:
-        'Creating desktop application that is a part of a system used for testing RPAs with Electron, React and styled-components. Building block based UIs with react flow and using Electron APIs to read, save, translate files, capture desktop windows and much more. Maintaining angular application that is centered around working with a map and displaying data and photos on it. This application uses Mapbox GL JS, Angular Material and SASS.',
+      list: [
+        'Creating desktop application that is a part of a system used for testing RPAs with Electron, React and styled-components',
+        'Building block based UIs with react flow and using Electron APIs to read, save, translate files, capture desktop windows and much more',
+        'Maintaining angular application that is centered around working with a map and displaying data and photos on it. This application uses Mapbox GL JS, Angular Material and SASS',
+        'Writing unit test for React components as well as libraries that are used in the project and end to end tests for Angular application with Cypress',
+        'Working in a team of 3 developer with a project manager',
+        'Bringing designs from Figma and Adobe XD to life with React',
+      ],
     },
     {
       number: '02',
@@ -31,8 +37,12 @@ export default function ExperienceSection() {
       startDate: 'May 2022',
       endDate: 'July 2022',
       skills: ['React', 'TypeScript', 'TailwindCSS', 'Vue.js', 'Recharts'],
-      description:
-        'Building data driven applications with React and TypeScript. Creating reusable components and using TailwindCSS for styling. Creating graphs in React application with Recharts. Learning Vue.js and creating a simple application with it.',
+      list: [
+        'Building data driven applications with React and TypeScript. Creating reusable components and using TailwindCSS for styling.',
+        'Creating graphs in React application with Recharts.',
+        'Learning Vue.js and creating a simple application with it.',
+        'Working in a team of a fullstack developer, frontend developer and project manager',
+      ],
     },
   ];
 
@@ -49,7 +59,7 @@ export default function ExperienceSection() {
             companyUrl={workItem.companyUrl}
             endDate={workItem.endDate}
             startDate={workItem.startDate}
-            description={workItem.description}
+            list={workItem.list}
             skills={workItem.skills}
             last={index === workItemsList.length - 1}
           />

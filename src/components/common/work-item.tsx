@@ -1,4 +1,6 @@
+import { Briefcase } from 'lucide-react';
 import React from 'react';
+import BulletList from '~/components/common/bullet-list';
 import OutsideLink from '~/components/common/outside-link';
 import TechTag from '~/components/common/tech-tag';
 import { cn } from '~/utils/cn';
@@ -11,7 +13,7 @@ export type WorkItemProps = {
   endDate: string;
   number: string;
   skills: string[];
-  description?: string;
+  list: string[];
   last?: boolean;
 };
 
@@ -21,7 +23,7 @@ export default function WorkItem({
   companyUrl,
   endDate,
   startDate,
-  description,
+  list,
   number,
   skills,
   last = false,
@@ -39,10 +41,13 @@ export default function WorkItem({
         <OutsideLink href={companyUrl}>
           <span className='w-fit text-sm md:text-base'>@{companyName}</span>
         </OutsideLink>
-        <p className='py-2 font-mono text-xs text-white/50 md:text-sm'>
+        <p className='pt-4 font-mono text-xs text-white/50 md:text-sm'>
           {startDate} - {endDate}
         </p>
-        <p className='pb-4 text-sm text-white/50 md:text-base'>{description}</p>
+        <BulletList
+          list={list}
+          icon={<Briefcase className='h-4 w-4 text-primary md:h-5 md:w-5' />}
+        />
         <div className='flex flex-wrap gap-2'>
           {skills.map((skill, index) => (
             <TechTag
