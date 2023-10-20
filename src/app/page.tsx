@@ -1,4 +1,5 @@
 import { GithubIcon, LinkedinIcon } from 'lucide-react';
+import Link from 'next/link';
 import Highlight from '~/components/hightlight';
 import IconLink from '~/components/icon-link';
 import OutsideLink from '~/components/outside-link';
@@ -6,7 +7,10 @@ import OutsideLink from '~/components/outside-link';
 export default function Home() {
   return (
     <main className='px-6'>
-      <header className='container mx-auto flex h-screen flex-col justify-center'>
+      <header
+        id='header'
+        className='container mx-auto flex h-screen flex-col justify-center'
+      >
         <h1 className='font-roboto pb-4 text-xs tracking-wide text-primary'>
           Hi, my name is
         </h1>

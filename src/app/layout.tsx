@@ -23,7 +23,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang='en' className='bg-background text-white'>
+    <html lang='en' className='scroll-smooth bg-background text-white'>
       <body className={`${inter.className} ${roboto.variable}`}>
         {children}
       </body>
