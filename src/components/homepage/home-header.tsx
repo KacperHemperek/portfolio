@@ -3,6 +3,7 @@ import React from 'react';
 import Highlight from '~/components/common/hightlight';
 import IconLink from '~/components/common/icon-link';
 import OutsideLink from '~/components/common/outside-link';
+import { socials } from '~/utils/socials';
 
 export default function HomeHeader() {
   return (
@@ -27,13 +28,10 @@ export default function HomeHeader() {
         <Highlight>projects</Highlight>
       </p>
       <div className='flex gap-4'>
-        <IconLink bordered href='https://www.github.com/KacperHemperek/'>
+        <IconLink bordered href={socials.linkedin.url}>
           <GithubIcon className='h-4 w-4 md:h-5 md:w-5' />
         </IconLink>
-        <IconLink
-          bordered
-          href='https://www.linkedin.com/in/kacper-hemperek-824abb236/'
-        >
+        <IconLink bordered href={socials.linkedin.url}>
           <LinkedinIcon className='h-4 w-4 md:h-5 md:w-5' />
         </IconLink>
       </div>
