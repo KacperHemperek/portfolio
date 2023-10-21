@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ['latin'] });
 const roboto = Roboto_Mono({ subsets: ['latin'], variable: '--roboto-mono' });
 
 export const metadata: Metadata = {
-  title: 'Kacper Hemperek - Software Engineer',
+  title: 'Kacper Hemperek',
   description:
     'This is a my personal website with my work history, all of my projects and something about myself',
   keywords:
