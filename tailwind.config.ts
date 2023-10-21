@@ -1,4 +1,14 @@
 import type { Config } from 'tailwindcss';
+import plugin from 'tailwindcss/plugin';
+
+const filterEmeraldPlugin = plugin(({ addUtilities }) => {
+  addUtilities({
+    '.filter-emerald': {
+      filter: 'grayscale(1) contrast(1)',
+      mixBlendMode: 'multiply',
+    },
+  });
+});
 
 const config: Config = {
   content: [
@@ -17,12 +27,13 @@ const config: Config = {
         background: 'rgb(var(--bg-color) / <alpha-value>)',
         primary: 'rgb(var(--primary-color) / <alpha-value>)',
         'background-muted': 'rgb(var(--bg-muted-color) / <alpha-value>)',
+        'background-accent': 'rgb(var(--bg-accent-color) / <alpha-value>)',
       },
       fontFamily: {
         roboto: 'var(--roboto-mono)',
       },
     },
   },
-  plugins: [],
+  plugins: [filterEmeraldPlugin],
 };
 export default config;

@@ -8,10 +8,10 @@ import { socials } from '~/utils/socials';
 export default function HomeHeader() {
   return (
     <header id='header' className='flex h-screen flex-col justify-center'>
-      <h1 className='font-roboto pb-4 text-xs tracking-wide text-primary'>
+      <h1 className='font-roboto pb-4 text-xs tracking-wide text-primary md:text-sm'>
         Hi, my name is
       </h1>
-      <h2 className=' pb-4 text-4xl font-black text-white'>
+      <h2 className=' pb-4 text-4xl font-black text-white md:text-6xl'>
         Kacper Hemperek
         <br />
         <span className=' text-white/60'>I build web apps</span>
