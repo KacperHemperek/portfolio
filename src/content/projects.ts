@@ -1,7 +1,9 @@
 import shoppingifyImage from '~/assets/shoppingify_project.png';
 import twitterImage from '~/assets/twitter_clone_project.png';
+import { DetailedProjectCardProps } from '~/components/common/detailed-project-card';
+import { socials } from '~/utils/socials';
 
-export const featuredProjects = [
+export const featuredProjects: DetailedProjectCardProps[] = [
   {
     title: 'Shoppingify',
     image: shoppingifyImage,
@@ -22,6 +24,8 @@ export const featuredProjects = [
       'Check out statistics of items that you use the most and how much of each item you already bought each month.',
       'You can also track you old lists and see if you stopped buying certain items or if you started buying new ones.',
     ],
+    link: 'https://shoppingify.kacperhemperek.com/',
+    repoLink: `${socials.github.url}/shoppingify-next`,
   },
 
   {
@@ -45,6 +49,8 @@ export const featuredProjects = [
       'Follow other users and see their posts on your feed',
       'Edit your profile, change your nickname, description, links to external sites, and location',
     ],
+    link: 'https://twitter.kacperhemperek.com/',
+    repoLink: `${socials.github.url}/twitter-clone`,
   },
 ];
 

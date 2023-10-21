@@ -1,8 +1,19 @@
-import { BadgeCheck, Check, ExternalLink } from 'lucide-react';
+import { BadgeCheck, Check, ExternalLink, Github } from 'lucide-react';
 import Image, { StaticImageData } from 'next/image';
 import React from 'react';
 import BulletList from '~/components/common/bullet-list';
+import IconLink from '~/components/common/icon-link';
 import TechTag from '~/components/common/tech-tag';
+
+export type DetailedProjectCardProps = {
+  image: StaticImageData;
+  description: string;
+  skills: string[];
+  title: string;
+  features: string[];
+  link: string;
+  repoLink: string;
+};
 
 export default function DetailedProjectCard({
   image,
@@ -10,19 +21,12 @@ export default function DetailedProjectCard({
   skills,
   title,
   features,
-}: {
-  image: StaticImageData;
-  title: string;
-  description: string;
-  skills: string[];
-  features: string[];
-}) {
+  link,
+  repoLink,
+}: DetailedProjectCardProps) {
   return (
     <div className='flex flex-col gap-4 py-8 first:pt-0 last:pb-0 lg:gap-6'>
-      <a
-        href='https://shoppingify.kacperhemperek.com'
-        className='group relative flex overflow-hidden rounded-lg'
-      >
+      <a href={link} className='group relative flex overflow-hidden rounded-lg'>
         <span className='absolute right-4 top-4 opacity-100 mix-blend-difference duration-300 group-hover:opacity-100 lg:opacity-0'>
           <ExternalLink className='h-4 w-4 md:h-6 md:w-6' />
         </span>
@@ -50,6 +54,28 @@ export default function DetailedProjectCard({
         {skills.map((skill) => (
           <TechTag key={`tech__tag__${skill}__${title}`} title={skill} />
         ))}
+      </div>
+      <div className='flex gap-4'>
+        <IconLink href={repoLink} bordered colored>
+          <>
+            <div>
+              <Github className='h-4 w-4' />
+            </div>
+            <span>
+              <span className='hidden md:inline'>View on </span>Github
+            </span>
+          </>
+        </IconLink>
+        <IconLink href={link} bordered colored>
+          <>
+            <div>
+              <ExternalLink className='h-4 w-4' />
+            </div>
+            <span>
+              <span className='hidden md:inline'>Checkout </span>Demo
+            </span>
+          </>
+        </IconLink>
       </div>
     </div>
   );
