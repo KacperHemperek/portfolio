@@ -22,13 +22,13 @@ export default function Navbar() {
         }}
         className={cn(
           'fixed right-6 top-6 z-50 rounded-full p-4 text-white ',
-          isMenuOpen ? 'shadow-none ' : 'shadow-lg delay-500',
+          isMenuOpen ? 'shadow-none ' : 'shadow-2xl delay-500',
         )}
       >
         {isMenuOpen ? <X /> : <Menu />}
       </button>
       <motion.nav
-        className='fixed inset-0 z-40 flex items-center justify-center bg-background-muted px-6 py-6 shadow-lg'
+        className='fixed inset-0 z-40 flex items-center justify-center bg-background-muted px-6 py-6'
         initial={{
           clipPath: 'circle(1.75rem at calc(100% - 3.25rem) 3.25rem)',
         }}
