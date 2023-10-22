@@ -22,7 +22,7 @@ export default function Navbar() {
         }}
         className={cn(
           'fixed right-6 top-6 z-50 rounded-full p-4 text-white ',
-          isMenuOpen ? 'shadow-none ' : 'shadow-2xl delay-500',
+          isMenuOpen ? 'shadow-none ' : 'shadow-nav delay-500',
         )}
       >
         {isMenuOpen ? <X /> : <Menu />}

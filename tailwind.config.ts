@@ -32,6 +32,9 @@ const config: Config = {
       fontFamily: {
         roboto: 'var(--roboto-mono)',
       },
+      boxShadow: {
+        nav: '0px 0px 15px -5px rgba(0,0,0,0.8)',
+      },
     },
   },
   plugins: [filterEmeraldPlugin],
