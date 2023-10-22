@@ -22,7 +22,7 @@ export default function Navbar() {
         }}
         className={cn(
           'fixed right-6 top-6 z-50 rounded-full p-4 text-white ',
-          isMenuOpen ? 'shadow-none ' : 'shadow-lg delay-300',
+          isMenuOpen ? 'shadow-none ' : 'shadow-lg delay-500',
         )}
       >
         {isMenuOpen ? <X /> : <Menu />}
@@ -37,7 +37,7 @@ export default function Navbar() {
             ? 'circle(150% at calc(100% - 3.25rem) 3.25rem)'
             : 'circle(1.75rem at calc(100% - 3.25rem) 3.25rem)',
           transition: {
-            duration: isMenuOpen ? 0.5 : 0.3,
+            duration: 0.5,
           },
         }}
       >
