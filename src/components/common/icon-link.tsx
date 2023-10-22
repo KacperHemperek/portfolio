@@ -12,15 +12,24 @@ export default function IconLink({
   bordered?: boolean;
   colored?: boolean;
 }) {
-  const classNames = cn(
-    'flex rounded-md p-2 transition-colors hover:bg-background-muted/80 hover:text-primary w-fit text-sm font-roboto h-min gap-2 items-center cursor-pointer',
-    bordered && 'border border-primary hovered:text-inherit',
-    colored && 'text-primary',
-  );
-
   return (
-    <a target='_blank' href={href} className={classNames}>
-      {children}
+    <a target='_blank' href={href} className='group relative h-min'>
+      <div
+        className={cn(
+          'group flex h-min w-fit cursor-pointer items-center gap-2 rounded-md p-2 font-roboto text-sm transition-all hover:text-primary',
+          bordered &&
+            'hovered:text-inherit border border-primary bg-background group-hover:-translate-x-1 group-hover:-translate-y-1',
+          colored && 'text-primary',
+        )}
+      >
+        {children}
+      </div>
+      <div
+        className={cn(
+          'absolute inset-0 -z-10 rounded-md bg-primary',
+          !bordered && 'hidden',
+        )}
+      />
     </a>
   );
 }
