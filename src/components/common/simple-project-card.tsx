@@ -15,12 +15,12 @@ export default function SimpleProjectCard({
   repoLink: string;
 }) {
   return (
-    <div className='bg-background-accent flex flex-col gap-3 rounded-lg p-4 transition-transform hover:-translate-y-1'>
+    <div className='flex flex-col gap-3 rounded-lg bg-background-accent p-4 transition-transform hover:-translate-y-1'>
       <div className='flex justify-between'>
         <a
           href={link}
           target='_blank'
-          className='transition-opacity hover:opacity-80'
+          className='cursor-pointer transition-opacity hover:opacity-80'
         >
           <AppWindow className='h-12 w-12 text-primary' />
         </a>
@@ -33,13 +33,13 @@ export default function SimpleProjectCard({
           </IconLink>
         </div>
       </div>
-      <h3 className='text-lg font-semibold'>{title}</h3>
+      <h3 className='text-lg font-semibold md:text-xl'>{title}</h3>
       <p className='text-sm text-white/50 md:text-base'>{description}</p>
       <div className='flex flex-wrap gap-2'>
         {skills.map((skill) => (
           <span
             key={`simple__project__card__skill__${skill}`}
-            className='font-roboto rounded-full border border-primary px-2 py-1 text-xs text-primary md:text-sm'
+            className='rounded-full border border-primary px-2 py-1 font-roboto text-xs text-primary md:text-sm'
           >
             {skill}
           </span>
