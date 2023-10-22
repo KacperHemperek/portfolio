@@ -21,7 +21,7 @@ export default function Navbar() {
           setIsMenuOpen((prev) => !prev);
         }}
         className={cn(
-          'fixed right-6 top-6 z-50 rounded-full p-4 text-white ',
+          'fixed right-8 top-8 z-50 rounded-full p-4 text-white ',
           isMenuOpen ? 'shadow-none ' : 'shadow-nav delay-500',
         )}
       >
@@ -30,12 +30,12 @@ export default function Navbar() {
       <motion.nav
         className='fixed inset-0 z-40 flex items-center justify-center bg-background-muted px-6 py-6'
         initial={{
-          clipPath: 'circle(1.75rem at calc(100% - 3.25rem) 3.25rem)',
+          clipPath: 'circle(1.75rem at calc(100% - 3.75rem) 3.75rem)',
         }}
         animate={{
           clipPath: isMenuOpen
-            ? 'circle(150% at calc(100% - 3.25rem) 3.25rem)'
-            : 'circle(1.75rem at calc(100% - 3.25rem) 3.25rem)',
+            ? 'circle(150% at calc(100% - 3.75rem) 3.75rem)'
+            : 'circle(1.75rem at calc(100% - 3.75rem) 3.75rem)',
           transition: {
             duration: 0.5,
           },
