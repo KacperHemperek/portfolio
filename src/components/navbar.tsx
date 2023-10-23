@@ -6,6 +6,9 @@ import { cn } from '~/utils/cn';
 import Link from 'next/link';
 import { links } from '~/content/nav-links';
 
+// TODO: make navigation bg-background and then change when scrolled
+// by some amount also hide shadow when on top of the page
+
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
