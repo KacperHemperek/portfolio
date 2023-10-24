@@ -15,7 +15,7 @@ export default function SimpleProjectCard({
   repoLink: string;
 }) {
   return (
-    <div className='flex flex-col gap-3 rounded-lg bg-background-accent p-4 transition-transform hover:-translate-y-1'>
+    <div className='flex flex-col gap-3 rounded-lg bg-background-muted p-4 transition-transform hover:-translate-y-1'>
       <div className='flex justify-between'>
         <a
           href={link}
