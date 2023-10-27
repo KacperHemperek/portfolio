@@ -1,5 +1,5 @@
 'use client';
-import { Menu, X } from 'lucide-react';
+import { GithubIcon, Menu, X } from 'lucide-react';
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { cn } from '~/utils/cn';
@@ -7,6 +7,8 @@ import Link from 'next/link';
 import { links } from '~/content/nav-links';
 import { useNavigationMenu } from '~/hooks/use-nav-menu';
 import { useScrollDirection } from '~/hooks/use-scroll-direction';
+import IconLink from '~/components/common/icon-link';
+import { socials } from '~/utils/socials';
 
 function DesktopNavbar() {
   const { scrollOffset } = useNavigationMenu();
@@ -53,14 +55,14 @@ function DesktopNavbar() {
       >
         KH
       </Link>
-      <div className='flex gap-8'>
+      <div className='flex items-center gap-8'>
         {links.map((link, index) => (
           <Link
             href={link.url}
             key={`navbar__link__${link.url}__${link.label}`}
           >
             <motion.div
-              className='-mb-1 flex flex-col text-center font-roboto text-sm'
+              className='-mb-1 flex flex-col py-2 text-center font-roboto text-sm'
               onHoverStart={() => setHoveredIndex(index)}
               onHoverEnd={() => setHoveredIndex(-1)}
               animate={hoveredIndex === index ? 'hovered' : 'unhovered'}
@@ -79,6 +81,10 @@ function DesktopNavbar() {
             </motion.div>
           </Link>
         ))}
+        <IconLink href={`${socials.github.url}/portfolio`} bordered colored>
+          <GithubIcon className='h-4 w-4' />
+          View Source
+        </IconLink>
       </div>
     </motion.nav>
   );
