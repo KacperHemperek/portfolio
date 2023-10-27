@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { Inter, Roboto_Mono } from 'next/font/google';
 import './globals.css';
-import MobileNavbar from '~/components/navbar';
+import { Navbar } from '~/components/navbar';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -26,7 +26,7 @@ export default function RootLayout({
   return (
     <html lang='en' className='scroll-smooth bg-background text-white'>
       <body className={`${inter.className} ${roboto.variable}`}>
-        <MobileNavbar />
+        <Navbar />
         {children}
       </body>
     </html>
