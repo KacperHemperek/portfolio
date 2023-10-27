@@ -27,7 +27,7 @@ function DesktopNavbar() {
       width: '100%',
     },
     unhovered: {
-      width: 0,
+      width: '2ch',
     },
   };
 
@@ -74,7 +74,7 @@ function DesktopNavbar() {
               <motion.div
                 className='border-t-2 border-primary'
                 variants={linkUnderlineVariants}
-                initial={{ width: 0 }}
+                initial={{ width: '2ch' }}
               />
             </motion.div>
           </Link>
