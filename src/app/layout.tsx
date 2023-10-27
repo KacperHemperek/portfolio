@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Inter, Roboto_Mono } from 'next/font/google';
 import './globals.css';
 import { Navbar } from '~/components/navbar';
+import { ScrollToTopButton } from '~/components/scroll-to-top-button';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -27,6 +28,7 @@ export default function RootLayout({
     <html lang='en' className='scroll-smooth bg-background text-white'>
       <body className={`${inter.className} ${roboto.variable}`}>
         <Navbar />
+        <ScrollToTopButton />
         {children}
       </body>
     </html>

@@ -1,71 +1,17 @@
 'use client';
 import { Menu, X } from 'lucide-react';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { cn } from '~/utils/cn';
 import Link from 'next/link';
 import { links } from '~/content/nav-links';
-
-function useNavigationMenu() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [prevScrollY, setPrevScrollY] = useState(0);
-
-  useEffect(() => {
-    if (!isMenuOpen) document.body.style.overflow = 'auto';
-    else document.body.style.overflow = 'hidden';
-  }, [isMenuOpen]);
-
-  useEffect(() => {
-    function handleScroll() {
-      const currentScrollY = window.scrollY;
-      setPrevScrollY(currentScrollY);
-    }
-
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
-
-  return {
-    isMenuOpen,
-    setIsMenuOpen,
-    scrollOffset: prevScrollY,
-  };
-}
-
-function useScrollDirection(offset: number = 5) {
-  const [scrollDirection, setScrollDirection] = useState<'up' | 'down'>('up');
-
-  useEffect(() => {
-    let lastScrollY = window.scrollY;
-
-    const updateScrollDirection = () => {
-      const scrollY = window.scrollY;
-      const direction = scrollY > lastScrollY ? 'down' : 'up';
-      if (
-        direction !== scrollDirection &&
-        (scrollY - lastScrollY > offset || scrollY - lastScrollY < -offset)
-      ) {
-        setScrollDirection(direction);
-      }
-      lastScrollY = scrollY > 0 ? scrollY : 0;
-    };
-    window.addEventListener('scroll', updateScrollDirection);
-    return () => {
-      window.removeEventListener('scroll', updateScrollDirection);
-    };
-  }, [scrollDirection, offset]);
-
-  return scrollDirection;
-}
+import { useNavigationMenu } from '~/hooks/use-nav-menu';
+import { useScrollDirection } from '~/hooks/use-scroll-direction';
 
 function DesktopNavbar() {
   const { scrollOffset } = useNavigationMenu();
-  const scrollDirection = useScrollDirection();
+  const scrollDirection = useScrollDirection(5);
   const [hoveredIndex, setHoveredIndex] = useState(-1);
-  const showNavBackground = scrollOffset >= 100;
 
   const linkTextVariants = {
     hovered: {
@@ -86,25 +32,28 @@ function DesktopNavbar() {
   };
 
   return (
-    <div className='fixed top-8 z-50 hidden w-screen justify-center lg:flex'>
-      <motion.nav
-        className='flex gap-8 rounded-full px-8 py-6'
-        animate={{
-          backgroundColor: showNavBackground
-            ? 'rgba(var(--bg-muted-color))'
-            : 'rgba(var(--bg-color))',
-          boxShadow: showNavBackground ? '0 0 10px 0 rgba(0, 0, 0, 0.25)' : '',
-          y: scrollDirection === 'up' ? 0 : -200,
-        }}
-        transition={{
-          y: {
-            type: 'spring',
-            stiffness: 100,
-            damping: 10,
-            mass: 0.5,
-          },
-        }}
+    <motion.nav
+      className={cn(
+        'fixed top-0 z-50 hidden w-screen items-center justify-between gap-8 bg-background px-8 py-6 transition-shadow lg:flex',
+        scrollOffset > 100 && 'shadow-nav',
+      )}
+      animate={{
+        y: scrollDirection === 'up' || scrollOffset === 0 ? 0 : '-105%',
+      }}
+      transition={{
+        y: {
+          duration: 0.2,
+          ease: 'easeIn',
+        },
+      }}
+    >
+      <Link
+        href='/#header'
+        className='text-2xl text-primary transition-opacity hover:opacity-80'
       >
+        KH
+      </Link>
+      <div className='flex gap-8'>
         {links.map((link, index) => (
           <Link
             href={link.url}
@@ -125,12 +74,13 @@ function DesktopNavbar() {
               <motion.div
                 className='border-t-2 border-primary'
                 variants={linkUnderlineVariants}
+                initial={{ width: 0 }}
               />
             </motion.div>
           </Link>
         ))}
-      </motion.nav>
-    </div>
+      </div>
+    </motion.nav>
   );
 }
 
