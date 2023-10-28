@@ -11,7 +11,7 @@ export default function ContactMeSection() {
           <h1 className='relative'>
             Contact me
             <div className='absolute -right-5 top-0 font-roboto text-xs font-light text-primary'>
-              04
+              03
             </div>
           </h1>
         </div>

@@ -11,9 +11,6 @@ export default function Home() {
       <HomeHeader />
       <ExperienceSection />
       <ProjectsSection />
-      <section id='skills'>
-        <SectionHeading title='Skills' number='03' />
-      </section>
       <ContactMeSection />
       <Footer />
     </main>

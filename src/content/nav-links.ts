@@ -11,10 +11,6 @@ export const links: {
     label: 'Projects',
   },
   {
-    url: '/#skills',
-    label: 'Skills',
-  },
-  {
     url: '/#contact',
     label: 'Contact',
   },
