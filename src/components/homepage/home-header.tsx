@@ -33,7 +33,7 @@ export default function HomeHeader() {
   );
 
   const DURATION = 1.5;
-  const TYPING_DELAY = 2;
+  const TYPING_DELAY = window.innerWidth >= 1024 ? 1.75 : 0.5;
 
   useEffect(() => {
     const controls = animate(count, baseText.length, {
