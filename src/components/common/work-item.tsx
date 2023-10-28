@@ -39,7 +39,7 @@ export default function WorkItem({
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.75,
+        duration: 0.25,
       },
     },
   };
@@ -73,60 +73,71 @@ export default function WorkItem({
     hidden: {
       transition: {
         staggerChildren: 0.2,
-        delayChildren: 1.5,
+        // delayChildren: 1.5,
       },
     },
     shown: {
       transition: {
         staggerChildren: 0.2,
-        delayChildren: 1.5,
+        // delayChildren: 1.5,
       },
     },
   };
 
   return (
-    <motion.div
-      whileInView='shown'
-      initial='hidden'
-      viewport={VIEWPORT_SETTINGS}
-      className='flex gap-2 md:gap-6'
-    >
-      <div className='flex flex-col items-center'>
+    <div className='flex gap-2 md:gap-6'>
+      <motion.div
+        whileInView='shown'
+        initial='hidden'
+        viewport={{ once: true, amount: 0.1 }}
+        className='flex flex-col items-center'
+      >
         <motion.div
           variants={{
             shown: {
-              opacity: 1,
+              scale: 1,
               transition: {
-                duration: 0.75,
+                duration: 0.25,
               },
             },
             hidden: {
-              opacity: 0,
+              scale: 0,
             },
           }}
-          className='z-10 flex aspect-square items-center justify-center rounded-full bg-primary p-2 font-roboto text-xs text-background ring-8 ring-background md:text-sm'
+          className='z-10 flex aspect-square items-center justify-center rounded-full bg-primary p-2 font-roboto text-xs text-background md:text-sm'
         >
           {number}
         </motion.div>
         {!last && (
           <motion.div
-            variants={{
-              shown: {
-                height: '100%',
-                transition: {
-                  delay: 3,
-                  duration: 0.75,
+            initial='hidden'
+            whileInView='shown'
+            viewport={{ once: true, amount: 'all' }}
+            className='flex flex-1 py-2'
+          >
+            <motion.div
+              variants={{
+                shown: {
+                  height: '100%',
+                  transition: {
+                    duration: 0.75,
+                  },
                 },
-              },
-              hidden: {
-                height: 0,
-              },
-            }}
-            className='w-[1px] bg-white/50'
-          />
+                hidden: {
+                  height: 0,
+                },
+              }}
+              className='w-[1px] bg-white/50'
+            />
+          </motion.div>
         )}
-      </div>
-      <div className={cn('flex flex-col', last ? 'pb-0' : 'pb-10 md:pb-16')}>
+      </motion.div>
+      <motion.div
+        initial='hidden'
+        whileInView='shown'
+        viewport={{ once: true, amount: 0.2 }}
+        className={cn('flex flex-col', last ? 'pb-0' : 'pb-10 md:pb-16')}
+      >
         <MotionConfig
           transition={{
             duration: 0.5,
@@ -163,6 +174,9 @@ export default function WorkItem({
           childVariants={listChildrenVariants}
         />
         <motion.div
+          initial='hidden'
+          whileInView='shown'
+          viewport={{ once: true, amount: 0.8 }}
           variants={skillsListVariants}
           className='flex flex-wrap gap-2'
         >
@@ -186,7 +200,7 @@ export default function WorkItem({
             />
           ))}
         </motion.div>
-      </div>
-    </motion.div>
+      </motion.div>
+    </div>
   );
 }
