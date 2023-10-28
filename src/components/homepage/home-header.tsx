@@ -1,22 +1,78 @@
+'use client';
+import { animate, useMotionValue, useTransform, motion } from 'framer-motion';
 import { GithubIcon, LinkedinIcon } from 'lucide-react';
-import React from 'react';
+import React, { useEffect } from 'react';
 import Highlight from '~/components/common/highlight';
 import IconLink from '~/components/common/icon-link';
 import OutsideLink from '~/components/common/outside-link';
 import { socials } from '~/utils/socials';
 
-export default function HomeHeader() {
+function Cursor() {
   return (
-    <header id='header' className='flex h-screen flex-col justify-center'>
-      <h1 className='font-roboto pb-4 text-xs tracking-wide text-primary md:text-sm'>
-        Hi, my name is
-      </h1>
-      <h2 className=' pb-4 text-4xl font-black text-white md:text-6xl'>
+    <motion.div
+      className='h-full w-[1px] bg-white'
+      animate={{
+        opacity: [0, 0, 1, 1],
+        transition: {
+          repeat: Infinity,
+          repeatType: 'reverse',
+          duration: 1,
+          times: [0, 0.5, 0.5, 1],
+        },
+      }}
+    />
+  );
+}
+
+export default function HomeHeader() {
+  const baseText = 'Hi my name is' as string;
+  const count = useMotionValue(0);
+  const rounded = useTransform(count, (latest) => Math.round(latest));
+  const displayText = useTransform(rounded, (latest) =>
+    baseText.slice(0, latest),
+  );
+
+  const DURATION = 2;
+
+  useEffect(() => {
+    const controls = animate(count, baseText.length, {
+      type: 'tween',
+      duration: DURATION,
+      ease: 'easeInOut',
+    });
+    return controls.stop;
+  }, []);
+
+  return (
+    <motion.header
+      transition={{ staggerChildren: 2 }}
+      id='header'
+      className='flex h-screen flex-col justify-center'
+    >
+      <div className='flex pb-4'>
+        <motion.h1 className='h-4 font-roboto text-xs tracking-wide text-primary md:text-sm'>
+          {displayText}
+        </motion.h1>
+        <Cursor />
+      </div>
+      <motion.h2
+        key='title'
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: DURATION }}
+        className=' pb-4 text-4xl font-black text-white md:text-6xl'
+      >
         Kacper Hemperek
         <br />
         <span className=' text-white/60'>I build web apps</span>
-      </h2>
-      <p className='pb-4 text-white/60'>
+      </motion.h2>
+      <motion.p
+        key='description'
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: DURATION + 0.5 }}
+        className='pb-4 text-white/60'
+      >
         I&#39;m a <Highlight>Frontend Developer</Highlight> based in Poland. I
         have a passion for creating beautiful and functional user interfaces.
         I&#39;m currently working at{' '}
@@ -26,15 +82,21 @@ export default function HomeHeader() {
         <OutsideLink href='/#projects' openInNewTab={false}>
           projects section
         </OutsideLink>
-      </p>
-      <div className='flex gap-4'>
+      </motion.p>
+      <motion.div
+        key='buttons'
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: DURATION + 1 }}
+        className='flex gap-4'
+      >
         <IconLink bordered href={socials.github.url}>
           <GithubIcon className='h-4 w-4 md:h-5 md:w-5' />
         </IconLink>
         <IconLink bordered href={socials.linkedin.url}>
           <LinkedinIcon className='h-4 w-4 md:h-5 md:w-5' />
         </IconLink>
-      </div>
-    </header>
+      </motion.div>
+    </motion.header>
   );
 }
