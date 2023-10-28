@@ -14,7 +14,7 @@ function BulletItem({
 }: {
   text: string;
   icon: React.ReactNode;
-} & CustomComponentMotionProps<HTMLMotionProps<'li'>>) {
+} & CustomComponentMotionProps<'li'>) {
   return (
     <motion.li {...motionProps} className='flex gap-4'>
       <div>{icon}</div>
@@ -68,8 +68,8 @@ export default function BulletList({
   list: string[];
   icon?: React.ReactNode;
   className?: string;
-  parentAnimationProps?: CustomComponentMotionProps<HTMLMotionProps<'ul'>>;
-  childAnimationProps?: CustomComponentMotionProps<HTMLMotionProps<'li'>>;
+  parentAnimationProps?: CustomComponentMotionProps<'ul'>;
+  childAnimationProps?: CustomComponentMotionProps<'li'>;
 }) {
   return (
     <motion.ul

@@ -6,7 +6,7 @@ import { CustomComponentMotionProps } from '~/types';
 export default function TechTag({
   title,
   ...rest
-}: { title: string } & CustomComponentMotionProps<HTMLMotionProps<'span'>>) {
+}: { title: string } & CustomComponentMotionProps<'span'>) {
   return (
     <motion.span
       {...rest}
