@@ -1,10 +1,11 @@
 'use client';
 import { animate, useMotionValue, useTransform, motion } from 'framer-motion';
 import { GithubIcon, LinkedinIcon } from 'lucide-react';
-import React, { useEffect } from 'react';
+import React, { use, useEffect } from 'react';
 import Highlight from '~/components/common/highlight';
 import IconLink from '~/components/common/icon-link';
 import OutsideLink from '~/components/common/outside-link';
+import { useIsClient } from '~/components/context-provider';
 import { socials } from '~/utils/socials';
 
 function Cursor() {
@@ -32,8 +33,10 @@ export default function HomeHeader() {
     baseText.slice(0, latest),
   );
 
+  const isClient = useIsClient();
+
   const DURATION = 1.5;
-  const TYPING_DELAY = window?.innerWidth >= 1024 ? 1.75 : 0.5;
+  const TYPING_DELAY = isClient && window.innerWidth >= 1024 ? 1.75 : 0.5;
 
   useEffect(() => {
     const controls = animate(count, baseText.length, {

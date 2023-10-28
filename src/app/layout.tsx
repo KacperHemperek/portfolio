@@ -3,6 +3,7 @@ import { Inter, Roboto_Mono } from 'next/font/google';
 import './globals.css';
 import { Navbar } from '~/components/navbar';
 import { ScrollToTopButton } from '~/components/scroll-to-top-button';
+import { ContextProvider } from '~/components/context-provider';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -25,12 +26,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang='en' className='scroll-smooth bg-background text-white'>
-      <body className={`${inter.className} ${roboto.variable}`}>
-        <Navbar />
-        <ScrollToTopButton />
-        {children}
-      </body>
-    </html>
+    <ContextProvider>
+      <html lang='en' className='scroll-smooth bg-background text-white'>
+        <body className={`${inter.className} ${roboto.variable}`}>
+          <Navbar />
+          <ScrollToTopButton />
+          {children}
+        </body>
+      </html>
+    </ContextProvider>
   );
 }
