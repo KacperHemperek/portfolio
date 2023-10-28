@@ -1,7 +1,7 @@
 'use client';
 import { GithubIcon, Menu, X } from 'lucide-react';
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import { Variants, motion } from 'framer-motion';
 import { cn } from '~/utils/cn';
 import Link from 'next/link';
 import { links } from '~/content/nav-links';
@@ -15,16 +15,18 @@ function DesktopNavbar() {
   const scrollDirection = useScrollDirection(5);
   const [hoveredIndex, setHoveredIndex] = useState(-1);
 
-  const linkTextVariants = {
+  const linkTextVariants: Variants = {
     hovered: {
+      opacity: 1,
       color: 'rbg(var(--primary-color))',
     },
     unhovered: {
+      opacity: 1,
       color: 'white',
     },
   };
 
-  const linkUnderlineVariants = {
+  const linkUnderlineVariants: Variants = {
     hovered: {
       width: '100%',
     },
@@ -53,38 +55,87 @@ function DesktopNavbar() {
         href='/#header'
         className='text-2xl text-primary transition-opacity hover:opacity-80'
       >
-        KH
+        <motion.span
+          initial={{
+            opacity: 0,
+          }}
+          animate={{
+            opacity: 1,
+          }}
+        >
+          KH
+        </motion.span>
       </Link>
       <div className='flex items-center gap-8'>
         {links.map((link, index) => (
-          <Link
-            href={link.url}
+          <motion.div
             key={`navbar__link__${link.url}__${link.label}`}
+            className='relative'
+            variants={{
+              initial: {
+                y: 10,
+                opacity: 0,
+              },
+              animate: {
+                y: 0,
+                opacity: 1,
+              },
+            }}
+            initial='initial'
+            animate='animate'
+            transition={{
+              duration: 0.5,
+              delay: 0.5 + 0.25 * index,
+            }}
           >
-            <motion.div
-              className='-mb-1 flex flex-col py-2 text-center font-roboto text-sm'
-              onHoverStart={() => setHoveredIndex(index)}
-              onHoverEnd={() => setHoveredIndex(-1)}
-              animate={hoveredIndex === index ? 'hovered' : 'unhovered'}
-            >
-              <div>
-                <span className='pr-2 text-primary'>{`0${index + 1}`}</span>
-                <motion.span variants={linkTextVariants}>
-                  {link.label}
-                </motion.span>
-              </div>
+            <Link href={link.url}>
               <motion.div
-                className='border-t-2 border-primary'
-                variants={linkUnderlineVariants}
-                initial={{ width: '2ch' }}
-              />
-            </motion.div>
-          </Link>
+                className='-mb-1 flex flex-col py-2 text-center font-roboto text-sm'
+                onHoverStart={() => setHoveredIndex(index)}
+                onHoverEnd={() => setHoveredIndex(-1)}
+                initial={{ opacity: 0 }}
+                animate={{
+                  opacity: 1,
+                  color:
+                    hoveredIndex === index
+                      ? 'rgb(var(--primary-color))'
+                      : 'white',
+                }}
+              >
+                <div>
+                  <span className='pr-2 text-primary'>{`0${index + 1}`}</span>
+                  <motion.span variants={linkTextVariants}>
+                    {link.label}
+                  </motion.span>
+                </div>
+                <motion.div
+                  className='border-t-2 border-primary'
+                  variants={linkUnderlineVariants}
+                  initial={{ width: '2ch' }}
+                />
+              </motion.div>
+            </Link>
+          </motion.div>
         ))}
-        <IconLink href={`${socials.github.url}/portfolio`} bordered colored>
-          <GithubIcon className='h-4 w-4' />
-          View Source
-        </IconLink>
+        <motion.div
+          initial={{
+            opacity: 0,
+            y: 10,
+          }}
+          animate={{
+            opacity: 1,
+            y: 0,
+          }}
+          transition={{
+            duration: 0.5,
+            delay: 0.5 + 0.25 * links.length,
+          }}
+        >
+          <IconLink href={`${socials.github.url}/portfolio`} bordered colored>
+            <GithubIcon className='h-4 w-4' />
+            View Source
+          </IconLink>
+        </motion.div>
       </div>
     </motion.nav>
   );

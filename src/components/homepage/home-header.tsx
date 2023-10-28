@@ -32,13 +32,15 @@ export default function HomeHeader() {
     baseText.slice(0, latest),
   );
 
-  const DURATION = 2;
+  const DURATION = 1.5;
+  const TYPING_DELAY = 2;
 
   useEffect(() => {
     const controls = animate(count, baseText.length, {
       type: 'tween',
       duration: DURATION,
       ease: 'easeInOut',
+      delay: TYPING_DELAY,
     });
     return controls.stop;
   }, []);
@@ -59,7 +61,7 @@ export default function HomeHeader() {
         key='title'
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: DURATION }}
+        transition={{ duration: 0.5, delay: DURATION + TYPING_DELAY + 0.25 }}
         className=' pb-4 text-4xl font-black text-white md:text-6xl'
       >
         Kacper Hemperek
@@ -70,7 +72,7 @@ export default function HomeHeader() {
         key='description'
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: DURATION + 0.5 }}
+        transition={{ duration: 0.5, delay: DURATION + TYPING_DELAY + 0.75 }}
         className='pb-4 text-white/60'
       >
         I&#39;m a <Highlight>Frontend Developer</Highlight> based in Poland. I
@@ -87,7 +89,7 @@ export default function HomeHeader() {
         key='buttons'
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: DURATION + 1 }}
+        transition={{ duration: 0.5, delay: DURATION + TYPING_DELAY + 1.25 }}
         className='flex gap-4'
       >
         <IconLink bordered href={socials.github.url}>
