@@ -36,8 +36,7 @@ const lineVariants: Variants = {
     width: '100%',
     transition: {
       delay: 0.5,
-      duration: 1,
-      ease: 'easeInOut',
+      duration: 0.75,
     },
   },
 };

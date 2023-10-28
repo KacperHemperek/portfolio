@@ -17,11 +17,9 @@ function DesktopNavbar() {
 
   const linkTextVariants: Variants = {
     hovered: {
-      opacity: 1,
       color: 'rbg(var(--primary-color))',
     },
     unhovered: {
-      opacity: 1,
       color: 'white',
     },
   };
@@ -93,14 +91,7 @@ function DesktopNavbar() {
                 className='-mb-1 flex flex-col py-2 text-center font-roboto text-sm'
                 onHoverStart={() => setHoveredIndex(index)}
                 onHoverEnd={() => setHoveredIndex(-1)}
-                initial={{ opacity: 0 }}
-                animate={{
-                  opacity: 1,
-                  color:
-                    hoveredIndex === index
-                      ? 'rgb(var(--primary-color))'
-                      : 'white',
-                }}
+                animate={hoveredIndex === index ? 'hovered' : 'unhovered'}
               >
                 <div>
                   <span className='pr-2 text-primary'>{`0${index + 1}`}</span>

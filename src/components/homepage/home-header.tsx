@@ -52,7 +52,7 @@ export default function HomeHeader() {
       className='flex h-screen flex-col justify-center'
     >
       <div className='flex pb-4'>
-        <motion.h1 className='h-4 font-roboto text-xs tracking-wide text-primary md:text-sm'>
+        <motion.h1 className=' h-4 font-roboto text-xs tracking-wide text-primary md:h-5 md:text-sm'>
           {displayText}
         </motion.h1>
         <Cursor />
