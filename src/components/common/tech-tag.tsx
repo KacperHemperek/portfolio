@@ -1,14 +1,12 @@
 'use client';
 import React from 'react';
 import { HTMLMotionProps, motion } from 'framer-motion';
+import { CustomComponentMotionProps } from '~/types';
 
 export default function TechTag({
   title,
   ...rest
-}: { title: string } & Omit<
-  HTMLMotionProps<'span'>,
-  'className' | 'children'
->) {
+}: { title: string } & CustomComponentMotionProps<HTMLMotionProps<'span'>>) {
   return (
     <motion.span
       {...rest}

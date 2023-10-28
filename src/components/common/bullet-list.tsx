@@ -5,11 +5,7 @@ import React from 'react';
 import { cn } from '~/utils/cn';
 
 import { HTMLMotionProps, Variants, motion } from 'framer-motion';
-
-type CustomComponentMotionProps<T extends HTMLMotionProps<any>> = Omit<
-  T,
-  'className' | 'children'
->;
+import { CustomComponentMotionProps } from '~/types';
 
 function BulletItem({
   text,
