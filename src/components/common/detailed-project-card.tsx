@@ -1,9 +1,10 @@
-import { BadgeCheck, Check, ExternalLink, Github } from 'lucide-react';
+'use client';
+import { BadgeCheck, ExternalLink, Github } from 'lucide-react';
 import Image, { StaticImageData } from 'next/image';
 import React from 'react';
 import BulletList from '~/components/common/bullet-list';
 import IconLink from '~/components/common/icon-link';
-import TechTag from '~/components/common/tech-tag';
+import TechTagList from '~/components/common/tech-tag-list';
 
 export type DetailedProjectCardProps = {
   image: StaticImageData;
@@ -38,7 +39,7 @@ export default function DetailedProjectCard({
       </a>
       <div className='flex items-center justify-between'>
         <h3 className=' text-xl font-bold md:text-2xl'>{title}</h3>
-        <span className='font-roboto flex items-center text-xs text-primary md:text-sm'>
+        <span className='flex items-center font-roboto text-xs text-primary md:text-sm'>
           Featured
           <BadgeCheck className='ml-2 h-4 w-4 md:h-5 md:w-5' />
         </span>
@@ -50,11 +51,7 @@ export default function DetailedProjectCard({
       <h4 className='font-roboto text-xs text-primary md:text-sm'>Features:</h4>
       <BulletList list={features} className='py-0' />
       <h4 className='font-roboto text-xs text-primary md:text-sm'>Skills:</h4>
-      <div className='flex flex-wrap gap-2'>
-        {skills.map((skill) => (
-          <TechTag key={`tech__tag__${skill}__${title}`} title={skill} />
-        ))}
-      </div>
+      <TechTagList list={skills} />
       <div className='flex gap-4'>
         <IconLink href={repoLink} bordered colored>
           <>
@@ -76,6 +73,7 @@ export default function DetailedProjectCard({
             </span>
           </>
         </IconLink>
+        T
       </div>
     </div>
   );
