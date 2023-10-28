@@ -1,10 +1,10 @@
 'use client';
+import { MotionConfig, Variants, motion } from 'framer-motion';
 import { Briefcase } from 'lucide-react';
 import React from 'react';
+import TechTagList from '~/components/common/tech-tag-list';
 import BulletList from '~/components/common/bullet-list';
-import TechTag from '~/components/common/tech-tag';
 import { cn } from '~/utils/cn';
-import { MotionConfig, Variants, motion } from 'framer-motion';
 
 export type WorkItemProps = {
   position: string;
@@ -168,33 +168,7 @@ export default function WorkItem({
           list={list}
           icon={<Briefcase className='h-4 w-4 text-primary md:h-5 md:w-5' />}
         />
-        <motion.div
-          initial='hidden'
-          whileInView='shown'
-          viewport={{ once: true, amount: 0.8 }}
-          variants={skillsListVariants}
-          className='flex flex-wrap gap-2'
-        >
-          {skills.map((skill, index) => (
-            <TechTag
-              variants={{
-                hidden: {
-                  opacity: 0,
-                  y: 10,
-                },
-                shown: {
-                  opacity: 1,
-                  y: 0,
-                  transition: {
-                    duration: 0.75,
-                  },
-                },
-              }}
-              title={skill}
-              key={'work__item__tag__' + companyName + '__' + skill + index}
-            />
-          ))}
-        </motion.div>
+        <TechTagList list={skills} />
       </motion.div>
     </div>
   );
