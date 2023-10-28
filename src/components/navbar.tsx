@@ -71,7 +71,7 @@ function DesktopNavbar() {
             className='relative'
             variants={{
               initial: {
-                y: 10,
+                y: -10,
                 opacity: 0,
               },
               animate: {
@@ -88,7 +88,7 @@ function DesktopNavbar() {
           >
             <Link href={link.url}>
               <motion.div
-                className='-mb-1 flex flex-col py-2 text-center font-roboto text-sm'
+                className='-mb-1 flex flex-col py-2 text-center font-roboto text-xs'
                 onHoverStart={() => setHoveredIndex(index)}
                 onHoverEnd={() => setHoveredIndex(-1)}
                 animate={hoveredIndex === index ? 'hovered' : 'unhovered'}
@@ -111,7 +111,7 @@ function DesktopNavbar() {
         <motion.div
           initial={{
             opacity: 0,
-            y: 10,
+            y: -10,
           }}
           animate={{
             opacity: 1,
@@ -124,7 +124,7 @@ function DesktopNavbar() {
         >
           <IconLink href={`${socials.github.url}/portfolio`} bordered colored>
             <GithubIcon className='h-4 w-4' />
-            View Source
+            <span className='text-xs'>View Source</span>
           </IconLink>
         </motion.div>
       </div>
