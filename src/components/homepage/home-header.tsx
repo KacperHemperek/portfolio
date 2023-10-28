@@ -76,14 +76,14 @@ export default function HomeHeader() {
         className='pb-4 text-white/60'
       >
         I&#39;m a <Highlight>Frontend Developer</Highlight> based in Poland. I
-        have a passion for creating beautiful and functional user interfaces.
-        I&#39;m currently working at{' '}
-        <OutsideLink href='https://apptimia.com/'>Apptimia</OutsideLink>. I use
-        React as my day to day tool for creating UIs. You can see all of my{' '}
+        have a passion for creating beautiful and functional user interfaces. I
+        use React as my day to day tool for creating UIs. You can see all of my{' '}
         <Highlight>projects</Highlight> on github or check out my{' '}
         <OutsideLink href='/#projects' openInNewTab={false}>
           projects section
         </OutsideLink>
+        . Currently working at{' '}
+        <OutsideLink href='https://apptimia.com/'>@Apptimia</OutsideLink>.
       </motion.p>
       <motion.div
         key='buttons'
