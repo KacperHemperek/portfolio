@@ -4,7 +4,6 @@ import React from 'react';
 import BulletList from '~/components/common/bullet-list';
 import TechTag from '~/components/common/tech-tag';
 import { cn } from '~/utils/cn';
-import { VIEWPORT_SETTINGS } from '~/utils/framer-viewport-settings';
 import { MotionConfig, Variants, motion } from 'framer-motion';
 
 export type WorkItemProps = {
@@ -61,7 +60,7 @@ export default function WorkItem({
   const listChildrenVariants: Variants = {
     hidden: {
       opacity: 0,
-      x: -10,
+      x: 20,
     },
     shown: {
       opacity: 1,
@@ -73,13 +72,11 @@ export default function WorkItem({
     hidden: {
       transition: {
         staggerChildren: 0.2,
-        // delayChildren: 1.5,
       },
     },
     shown: {
       transition: {
         staggerChildren: 0.2,
-        // delayChildren: 1.5,
       },
     },
   };
@@ -146,7 +143,7 @@ export default function WorkItem({
         >
           <motion.h5
             variants={headerVariants}
-            className=' text-lg font-semibold md:text-xl'
+            className='text-lg font-semibold md:text-xl'
           >
             {position}
           </motion.h5>
@@ -170,8 +167,16 @@ export default function WorkItem({
         <BulletList
           list={list}
           icon={<Briefcase className='h-4 w-4 text-primary md:h-5 md:w-5' />}
-          parentVariants={listVariants}
-          childVariants={listChildrenVariants}
+          parentAnimationProps={{
+            variants: listVariants,
+            whileInView: 'shown',
+            initial: 'hidden',
+            viewport: {
+              once: true,
+              amount: 0.3,
+            },
+          }}
+          childAnimationProps={{ variants: listChildrenVariants }}
         />
         <motion.div
           initial='hidden'
