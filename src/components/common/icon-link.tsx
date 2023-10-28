@@ -6,14 +6,20 @@ export default function IconLink({
   href,
   bordered = false,
   colored = false,
+  newTab = true,
 }: {
   children: React.ReactNode;
   href: string;
   bordered?: boolean;
   colored?: boolean;
+  newTab?: boolean;
 }) {
   return (
-    <a target='_blank' href={href} className='group relative h-min'>
+    <a
+      target={newTab ? '_blank' : '_self'}
+      href={href}
+      className='group relative h-min'
+    >
       <div
         className={cn(
           'flex h-min w-fit cursor-pointer items-center gap-2 rounded-md p-2 font-roboto text-sm transition-all group-hover:text-primary',

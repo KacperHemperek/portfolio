@@ -5,4 +5,8 @@ export const socials = {
   linkedin: {
     url: 'https://www.linkedin.com/in/kacper-hemperek-824abb236/',
   },
+  email: {
+    url: 'mailto:kacper.hemperek@o2.pl',
+    name: 'kacper.hemperek@o2.pl',
+  },
 };
