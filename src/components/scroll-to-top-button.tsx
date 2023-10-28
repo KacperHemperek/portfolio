@@ -19,9 +19,9 @@ export function ScrollToTopButton() {
           !showNavBackground && 'pointer-events-none',
         )}
         whileTap={{ scale: 0.9 }}
-        initial={{ y: 100 }}
+        initial={{ y: 110 }}
         animate={{
-          y: showNavBackground ? 0 : 100,
+          y: showNavBackground ? 0 : 110,
         }}
       >
         <ArrowUp />
