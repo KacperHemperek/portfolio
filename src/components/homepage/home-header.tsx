@@ -1,7 +1,7 @@
 'use client';
 import { animate, useMotionValue, useTransform, motion } from 'framer-motion';
 import { GithubIcon, LinkedinIcon } from 'lucide-react';
-import React, { use, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import Highlight from '~/components/common/highlight';
 import IconLink from '~/components/common/icon-link';
 import OutsideLink from '~/components/common/outside-link';

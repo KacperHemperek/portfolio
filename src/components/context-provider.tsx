@@ -1,4 +1,5 @@
-import React, {
+'use client';
+import {
   ReactNode,
   createContext,
   useContext,
