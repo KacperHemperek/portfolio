@@ -167,16 +167,6 @@ export default function WorkItem({
         <BulletList
           list={list}
           icon={<Briefcase className='h-4 w-4 text-primary md:h-5 md:w-5' />}
-          parentAnimationProps={{
-            variants: listVariants,
-            whileInView: 'shown',
-            initial: 'hidden',
-            viewport: {
-              once: true,
-              amount: 0.3,
-            },
-          }}
-          childAnimationProps={{ variants: listChildrenVariants }}
         />
         <motion.div
           initial='hidden'
