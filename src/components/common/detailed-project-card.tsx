@@ -73,7 +73,6 @@ export default function DetailedProjectCard({
             </span>
           </>
         </IconLink>
-        T
       </div>
     </div>
   );
