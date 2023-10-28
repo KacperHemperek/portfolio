@@ -1,7 +1,6 @@
 'use client';
 import React from 'react';
 import { Variants, motion } from 'framer-motion';
-import { VIEWPORT_SETTINGS } from '~/utils/framer-viewport-settings';
 
 const titleVariants: Variants = {
   hidden: { x: -10, opacity: 0 },
@@ -52,7 +51,7 @@ export default function SectionHeading({
     <motion.div
       whileInView='shown'
       initial='hidden'
-      viewport={VIEWPORT_SETTINGS}
+      viewport={{ once: true, amount: 'all' }}
       className='flex items-center gap-2 py-2'
     >
       <motion.h3 variants={titleVariants} className='text-2xl font-bold'>
