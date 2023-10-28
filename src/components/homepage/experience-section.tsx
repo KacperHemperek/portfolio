@@ -1,6 +1,8 @@
+'use client';
 import React from 'react';
 import SectionHeading from '~/components/common/section-heading';
 import WorkItem, { WorkItemProps } from '~/components/common/work-item';
+import { motion } from 'framer-motion';
 
 export default function ExperienceSection() {
   const workItemsList: Omit<WorkItemProps, 'last'>[] = [
@@ -49,7 +51,22 @@ export default function ExperienceSection() {
   return (
     <section id='experience'>
       <SectionHeading title='Experience' number='01' />
-      <div className='flex flex-col py-16'>
+      <motion.div
+        variants={{
+          shown: {
+            transition: {
+              staggerChildren: 0.2,
+              delayChildren: 1.25,
+            },
+          },
+          hidden: {
+            transition: {
+              staggerChildren: 0.2,
+            },
+          },
+        }}
+        className='flex flex-col py-16'
+      >
         {workItemsList.map((workItem, index) => (
           <WorkItem
             key={'work__item__' + workItem.companyName + index}
@@ -64,7 +81,7 @@ export default function ExperienceSection() {
             last={index === workItemsList.length - 1}
           />
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 }
