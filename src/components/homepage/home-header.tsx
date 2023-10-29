@@ -90,16 +90,42 @@ export default function HomeHeader() {
         <OutsideLink href='https://apptimia.com/'>@Apptimia</OutsideLink>.
       </motion.p>
       <motion.div
-        key='buttons'
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: DURATION + TYPING_DELAY + 1.25 }}
+        animate='shown'
+        initial='hidden'
+        variants={{
+          shown: {
+            transition: {
+              staggerChildren: 0.2,
+              delayChildren: DURATION + TYPING_DELAY + 1,
+            },
+          },
+        }}
         className='flex gap-4'
       >
-        <IconLink bordered href={socials.github.url}>
+        <IconLink
+          variants={{
+            shown: { opacity: 1, y: 0 },
+            hidden: { opacity: 0, y: 10 },
+          }}
+          transition={{
+            duration: 0.5,
+          }}
+          bordered
+          href={socials.github.url}
+        >
           <GithubIcon className='h-4 w-4 md:h-5 md:w-5' />
         </IconLink>
-        <IconLink bordered href={socials.linkedin.url}>
+        <IconLink
+          variants={{
+            shown: { opacity: 1, y: 0 },
+            hidden: { opacity: 0, y: 10 },
+          }}
+          transition={{
+            duration: 0.5,
+          }}
+          bordered
+          href={socials.linkedin.url}
+        >
           <LinkedinIcon className='h-4 w-4 md:h-5 md:w-5' />
         </IconLink>
       </motion.div>
