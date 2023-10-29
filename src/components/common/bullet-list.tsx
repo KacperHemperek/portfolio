@@ -4,7 +4,7 @@ import { Check } from 'lucide-react';
 import React from 'react';
 import { cn } from '~/utils/cn';
 
-import { HTMLMotionProps, Variants, motion } from 'framer-motion';
+import { Variants, motion } from 'framer-motion';
 import { CustomComponentMotionProps } from '~/types';
 
 function BulletItem({
@@ -27,7 +27,6 @@ const listVariants: Variants = {
   shown: {
     transition: {
       staggerChildren: 0.2,
-      delayChildren: 0.5,
     },
   },
   hidden: {
