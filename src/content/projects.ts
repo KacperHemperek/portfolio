@@ -1,9 +1,24 @@
 import shoppingifyImage from '~/assets/shoppingify_project.png';
 import twitterImage from '~/assets/twitter_clone_project.png';
+import portfolioImage from '~/assets/protfolio_project_thumbnail.png';
 import { DetailedProjectCardProps } from '~/components/common/detailed-project-card';
 import { socials } from '~/utils/socials';
 
 export const featuredProjects: DetailedProjectCardProps[] = [
+  {
+    title: 'Portfolio Website',
+    image: portfolioImage,
+    description:
+      'My personal portfolio website, showcasing all my projects and work experience',
+    features: [
+      'Fully responsive ui that looks good on all devices',
+      'Displays all previous work experience and projects',
+      'Allows you to contact me via email or social media',
+    ],
+    link: '/',
+    repoLink: `${socials.github.url}/portfolio`,
+    skills: ['Next.js', 'React', 'TypeScript', 'TailwindCSS', 'Framer Motion'],
+  },
   {
     title: 'Shoppingify',
     image: shoppingifyImage,
