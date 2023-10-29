@@ -43,58 +43,20 @@ export default function WorkItem({
     },
   };
 
-  const listVariants: Variants = {
-    shown: {
-      transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.5,
-      },
-    },
-    hidden: {
-      transition: {
-        staggerChildren: 0.2,
-      },
-    },
-  };
-
-  const listChildrenVariants: Variants = {
-    hidden: {
-      opacity: 0,
-      x: 20,
-    },
-    shown: {
-      opacity: 1,
-      x: 0,
-    },
-  };
-
-  const skillsListVariants: Variants = {
-    hidden: {
-      transition: {
-        staggerChildren: 0.2,
-      },
-    },
-    shown: {
-      transition: {
-        staggerChildren: 0.2,
-      },
-    },
-  };
-
   return (
     <div className='flex gap-2 md:gap-6'>
-      <motion.div
-        whileInView='shown'
-        initial='hidden'
-        viewport={{ once: true, amount: 0.1 }}
-        className='flex flex-col items-center'
-      >
+      <div className='flex flex-col items-center'>
         <motion.div
+          whileInView='shown'
+          initial='hidden'
+          viewport={{ once: true, amount: 'all' }}
           variants={{
             shown: {
               scale: 1,
               transition: {
-                duration: 0.25,
+                type: 'spring',
+                stiffness: 700,
+                damping: 30,
               },
             },
             hidden: {
@@ -128,7 +90,7 @@ export default function WorkItem({
             />
           </motion.div>
         )}
-      </motion.div>
+      </div>
       <motion.div
         initial='hidden'
         whileInView='shown'
@@ -138,7 +100,6 @@ export default function WorkItem({
         <MotionConfig
           transition={{
             duration: 0.5,
-            delay: last ? 0.5 : 1,
           }}
         >
           <motion.h5
