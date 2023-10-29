@@ -35,7 +35,23 @@ export default function ProjectsSection() {
           />
         ))}
       </div>
-      <h2 className='pb-8 text-2xl font-black'>Other Projects</h2>
+      <motion.h2
+        viewport={{ once: true, amount: 'all' }}
+        whileInView={{
+          opacity: 1,
+          y: 0,
+          transition: {
+            duration: 0.25,
+          },
+        }}
+        initial={{
+          opacity: 0,
+          y: 10,
+        }}
+        className='pb-8 text-2xl font-black'
+      >
+        Other Projects
+      </motion.h2>
       <div className='flex flex-col gap-6'>
         {otherProjects.map((project) => (
           <SimpleProjectCard

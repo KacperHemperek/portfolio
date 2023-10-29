@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import { AppWindow, ExternalLink, Github } from 'lucide-react';
 import IconLink from '~/components/common/icon-link';
 
@@ -15,7 +16,27 @@ export default function SimpleProjectCard({
   repoLink: string;
 }) {
   return (
-    <div className='flex flex-col gap-3 rounded-lg bg-background-muted p-4 transition-transform hover:-translate-y-1'>
+    <motion.div
+      whileInView={{
+        opacity: 1,
+        y: 0,
+        transition: {
+          duration: 0.25,
+        },
+      }}
+      initial={{
+        opacity: 0,
+        y: 10,
+      }}
+      viewport={{
+        once: true,
+        amount: 'all',
+      }}
+      whileHover={{
+        y: -8,
+      }}
+      className='flex flex-col gap-3 rounded-lg bg-background-muted p-4'
+    >
       <div className='flex justify-between'>
         <a
           href={link}
@@ -45,6 +66,6 @@ export default function SimpleProjectCard({
           </span>
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 }
