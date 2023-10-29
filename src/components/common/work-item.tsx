@@ -1,5 +1,5 @@
 'use client';
-import { MotionConfig, Variants, motion } from 'framer-motion';
+import { Variants, motion } from 'framer-motion';
 import { Briefcase } from 'lucide-react';
 import React from 'react';
 import TechTagList from '~/components/common/tech-tag-list';
@@ -97,34 +97,29 @@ export default function WorkItem({
         viewport={{ once: true, amount: 0.2 }}
         className={cn('flex flex-col', last ? 'pb-0' : 'pb-10 md:pb-16')}
       >
-        <MotionConfig
-          transition={{
-            duration: 0.5,
-          }}
+        <motion.h5
+          variants={headerVariants}
+          className='text-lg font-semibold md:text-xl'
         >
-          <motion.h5
-            variants={headerVariants}
-            className='text-lg font-semibold md:text-xl'
-          >
-            {position}
-          </motion.h5>
+          {position}
+        </motion.h5>
 
-          <motion.a
-            href={companyUrl}
-            target='_blank'
-            variants={headerVariants}
-            className='w-fit text-sm text-primary underline md:text-base'
-          >
-            @{companyName}
-          </motion.a>
+        <motion.a
+          href={companyUrl}
+          target='_blank'
+          variants={headerVariants}
+          className='w-fit text-sm text-primary underline md:text-base'
+        >
+          @{companyName}
+        </motion.a>
 
-          <motion.p
-            variants={headerVariants}
-            className='pt-4 font-mono text-xs text-white/50 md:text-sm'
-          >
-            {startDate} - {endDate}
-          </motion.p>
-        </MotionConfig>
+        <motion.p
+          variants={headerVariants}
+          className='pt-4 font-mono text-xs text-white/50 md:text-sm'
+        >
+          {startDate} - {endDate}
+        </motion.p>
+
         <BulletList
           list={list}
           icon={<Briefcase className='h-4 w-4 text-primary md:h-5 md:w-5' />}
