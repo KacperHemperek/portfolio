@@ -1,4 +1,7 @@
+'use client';
 import React from 'react';
+import { motion } from 'framer-motion';
+import { CustomComponentMotionProps } from '~/types';
 import { cn } from '~/utils/cn';
 
 export default function IconLink({
@@ -7,15 +10,18 @@ export default function IconLink({
   bordered = false,
   colored = false,
   newTab = true,
+  ...motionProps
 }: {
   children: React.ReactNode;
   href: string;
   bordered?: boolean;
   colored?: boolean;
   newTab?: boolean;
-}) {
+} & CustomComponentMotionProps<'a'>) {
   return (
-    <a
+    <motion.a
+      {...motionProps}
+      type='button'
       target={newTab ? '_blank' : '_self'}
       href={href}
       className='group relative h-min'
@@ -36,6 +42,6 @@ export default function IconLink({
           !bordered && 'hidden',
         )}
       />
-    </a>
+    </motion.a>
   );
 }
