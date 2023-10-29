@@ -78,10 +78,11 @@ export default function HomeHeader() {
         transition={{ duration: 0.5, delay: DURATION + TYPING_DELAY + 0.75 }}
         className='pb-4 text-white/60'
       >
-        I&#39;m a <Highlight>Frontend Developer</Highlight> based in Poland. I
-        have a passion for creating beautiful and functional user interfaces. I
-        use React as my day to day tool for creating UIs. You can see all of my{' '}
-        <Highlight>projects</Highlight> on github or check out my{' '}
+        I&#39;m a <Highlight>Frontend Developer</Highlight> based in Poland
+        passionate about creating beautiful and functional user interfaces. I
+        use React as my day to day tool and sometimes Angular for creating great
+        UIs. You can see all of my <Highlight>projects</Highlight> on github or
+        check out my{' '}
         <OutsideLink href='/#projects' openInNewTab={false}>
           projects section
         </OutsideLink>
