@@ -7,7 +7,7 @@ import { motion } from 'framer-motion';
 export default function ExperienceSection() {
   const workItemsList: Omit<WorkItemProps, 'last'>[] = [
     {
-      number: '01',
+      number: '02',
       position: 'Frontend Developer',
       companyName: 'Apptimia',
       companyUrl: 'https://apptimia.com',
@@ -32,7 +32,7 @@ export default function ExperienceSection() {
       ],
     },
     {
-      number: '02',
+      number: '01',
       position: 'Junior Frontend Developer',
       companyName: 'Delivence',
       companyUrl: 'https://www.linkedin.com/company/webbespokers/',
