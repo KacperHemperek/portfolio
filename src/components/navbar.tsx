@@ -64,7 +64,19 @@ function DesktopNavbar() {
           KH
         </motion.span>
       </Link>
-      <div className='flex items-center gap-8'>
+      <motion.div
+        variants={{
+          animate: {
+            transition: {
+              staggerChildren: 0.25,
+              delayChildren: 0.5,
+            },
+          },
+        }}
+        initial='initial'
+        animate='animate'
+        className='flex items-center gap-8'
+      >
         {links.map((link, index) => (
           <motion.div
             key={`navbar__link__${link.url}__${link.label}`}
@@ -78,12 +90,6 @@ function DesktopNavbar() {
                 y: 0,
                 opacity: 1,
               },
-            }}
-            initial='initial'
-            animate='animate'
-            transition={{
-              duration: 0.5,
-              delay: 0.5 + 0.25 * index,
             }}
           >
             <Link href={link.url}>
@@ -109,17 +115,15 @@ function DesktopNavbar() {
           </motion.div>
         ))}
         <motion.div
-          initial={{
-            opacity: 0,
-            y: -10,
-          }}
-          animate={{
-            opacity: 1,
-            y: 0,
-          }}
-          transition={{
-            duration: 0.5,
-            delay: 0.5 + 0.25 * links.length,
+          variants={{
+            initial: {
+              y: -10,
+              opacity: 0,
+            },
+            animate: {
+              y: 0,
+              opacity: 1,
+            },
           }}
         >
           <IconLink href={`${socials.github.url}/portfolio`} bordered colored>
@@ -127,7 +131,7 @@ function DesktopNavbar() {
             <span className='text-xs'>View Source</span>
           </IconLink>
         </motion.div>
-      </div>
+      </motion.div>
     </motion.nav>
   );
 }
