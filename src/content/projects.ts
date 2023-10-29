@@ -1,6 +1,6 @@
-import shoppingifyImage from '~/assets/shoppingify_project.png';
-import twitterImage from '~/assets/twitter_clone_project.png';
-import portfolioImage from '~/assets/protfolio_project_thumbnail.png';
+import shoppingifyImage from '~/assets/shoppingify_thumbnail.png';
+import twitterImage from '~/assets/twitter_thumbnail.png';
+import portfolioImage from '~/assets/portfolio_thumbnail.png';
 import { DetailedProjectCardProps } from '~/components/common/detailed-project-card';
 import { socials } from '~/utils/socials';
 
