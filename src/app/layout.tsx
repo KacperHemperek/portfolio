@@ -4,6 +4,7 @@ import './globals.css';
 import { Navbar } from '~/components/navbar';
 import { ScrollToTopButton } from '~/components/scroll-to-top-button';
 import { ContextProvider } from '~/components/context-provider';
+import { CallToActionButtons } from '~/components/call-to-action-buttons';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -31,6 +32,7 @@ export default function RootLayout({
         <body className={`${inter.className} ${roboto.variable}`}>
           <Navbar />
           <ScrollToTopButton />
+          <CallToActionButtons />
           {children}
         </body>
       </html>
