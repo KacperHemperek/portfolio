@@ -5,7 +5,7 @@ import { socials } from '~/utils/socials';
 
 export default function Footer() {
   return (
-    <footer className='flex flex-col items-center justify-center gap-12 py-24 text-center font-roboto text-sm text-white/50'>
+    <footer className='flex flex-col items-center justify-center gap-6 py-24 text-center font-roboto text-sm text-white/50'>
       <a href={socials.github.url} target='_blank'>
         Created by <Highlight>Kacper Hemperek</Highlight> <br />
         source code can be found here
