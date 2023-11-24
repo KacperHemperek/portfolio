@@ -55,6 +55,8 @@ export const featuredProjects: DetailedProjectCardProps[] = [
       'MySQL',
       'AuthJS',
       'Radix-UI',
+      'AWS S3',
+      'AWS Node SKD',
     ],
     description: 'Twitter clone with basic functionalities of the original app',
     features: [
@@ -63,6 +65,7 @@ export const featuredProjects: DetailedProjectCardProps[] = [
       'Like posts and comments',
       'Follow other users and see their posts on your feed',
       'Edit your profile, change your nickname, description, links to external sites, and location',
+      'Upload your profile picture and banner image',
     ],
     link: 'https://twitter.kacperhemperek.com/',
     repoLink: `${socials.github.url}/twitter-clone`,
