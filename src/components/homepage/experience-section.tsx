@@ -6,6 +6,11 @@ import { motion } from 'framer-motion';
 import { workItemsList } from '~/content/experience';
 
 export default function ExperienceSection() {
+  function getNumber(index: number, length: number): string {
+    const result = length - index;
+    return result < 10 ? `0${result}` : String(result);
+  }
+
   return (
     <section id='experience'>
       <SectionHeading title='Experience' number='01' />
@@ -25,10 +30,10 @@ export default function ExperienceSection() {
         }}
         className='flex flex-col py-16'
       >
-        {workItemsList.map((workItem, index) => (
+        {workItemsList.map((workItem, index, items) => (
           <WorkItem
             key={'work__item__' + workItem.companyName + index}
-            number={workItem.number}
+            number={getNumber(index, items.length)}
             position={workItem.position}
             companyName={workItem.companyName}
             companyUrl={workItem.companyUrl}
