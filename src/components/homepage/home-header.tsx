@@ -81,8 +81,8 @@ export default function HomeHeader() {
         I&#39;m a <Highlight>Fullstack Developer</Highlight> based in Poland
         passionate about creating beautiful and functional user interfaces as
         well as performant backends that can handle intense traffic.{' '}
-        <Highlight>React</Highlight> and <Highlight>Node.js</Highlight> are my
-        goto technologies but I also know (and currently work with){' '}
+        <Highlight>React</Highlight> and <Highlight>Node.js / Go </Highlight>{' '}
+        are my goto technologies but I also know (and currently work with){' '}
         <Highlight>Angular</Highlight> and <Highlight>Python</Highlight> those
         tools enable me to create amazing web applications. You can see all of
         my projects on{' '}
