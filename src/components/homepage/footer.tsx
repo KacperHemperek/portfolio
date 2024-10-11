@@ -8,7 +8,7 @@ export default function Footer() {
     <footer className='flex flex-col items-center justify-center gap-6 py-24 text-center font-roboto text-sm text-white/50'>
       <a href={socials.github.url} target='_blank'>
         Created by <Highlight>Kacper Hemperek</Highlight> <br />
-        source code can be found here
+        source code can be found <Highlight>here</Highlight>
       </a>
       <a
         href={socials.email.url}

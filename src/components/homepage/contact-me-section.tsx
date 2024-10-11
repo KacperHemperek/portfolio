@@ -54,7 +54,7 @@ export default function ContactMeSection() {
         >
           If you want to get in touch, talk to me about a project collaboration,
           new work opportunities or just say hi, you can reach out to me via
-          linkedin or just send me an email at
+          linkedin or just send me an email
         </motion.p>
         <motion.div
           whileInView='shown'

@@ -9,4 +9,4 @@ export const socials = {
     url: 'mailto:kacper.hemperek@o2.pl',
     name: 'kacper.hemperek@o2.pl',
   },
-};
+} as const;
