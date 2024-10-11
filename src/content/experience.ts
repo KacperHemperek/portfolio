@@ -14,6 +14,7 @@ export const workItemsList: Omit<WorkItemProps, 'last' | 'number'>[] = [
       'S3',
       'SQS',
       'SocetIO',
+      'Postgres',
       'Angular 2+',
       'TypeScript',
       'Angular Material',
@@ -54,8 +55,8 @@ export const workItemsList: Omit<WorkItemProps, 'last' | 'number'>[] = [
     position: 'Frontend Developer (Angular)',
     companyName: 'Apptimia',
     companyUrl: 'https://apptimia.com',
-    endDate: '2022',
-    startDate: '2023',
+    endDate: '2023',
+    startDate: '2022',
     skills: [
       'Angular 2+',
       'RxJS',
