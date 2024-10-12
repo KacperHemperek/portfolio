@@ -71,7 +71,7 @@ export const workItemsList: Omit<WorkItemProps, 'last' | 'number'>[] = [
       'Revamped end-to-end test suites to reduce CI time and improve test reliability, ensuring high-performance code in production.',
       'Updated outdated packages to improve system stability and ensure compatibility with the latest standards and supported technologies.',
       'Improved UIs for essential features to enhance UX and overall design',
-      'INtroduced additional E2E tests using cypress to ensure correct user flows across the application',
+      'Introduced additional E2E tests using cypress to ensure correct user flows across the application',
     ],
   },
 ];
