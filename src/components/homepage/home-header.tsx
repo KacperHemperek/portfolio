@@ -78,21 +78,23 @@ export default function HomeHeader() {
         transition={{ duration: 0.5, delay: DURATION + TYPING_DELAY + 0.75 }}
         className='pb-4 text-white/60'
       >
-        I&#39;m a <Highlight>Fullstack Developer</Highlight> based in Poland
-        passionate about creating beautiful and functional user interfaces as
-        well as performant backends that can handle intense traffic.{' '}
-        <Highlight>React</Highlight> and <Highlight>Node.js / Go </Highlight>{' '}
-        are my goto technologies but I also know (and currently work with){' '}
-        <Highlight>Angular</Highlight> and <Highlight>Python</Highlight> those
-        tools enable me to create amazing web applications. You can see all of
-        my projects on{' '}
+        I&#39;m a <Highlight>Software Engineer</Highlight> based in Poland
+        passionate about writing highly maintainable codebases that fulfill
+        business requirements. My most used technologies are{' '}
+        <Highlight>Python</Highlight>, <Highlight>TypeScript</Highlight>,{' '}
+        <Highlight>React</Highlight> but I also know{' '}
+        <Highlight>Angular</Highlight> for frontend developement and{' '}
+        <Highlight>Golang</Highlight> for making high traffic backend services
+        those tools enable me to create great software of any kind. You can see
+        all of my projects on{' '}
         <OutsideLink href={socials.github.url}>github</OutsideLink> or check out
         the{' '}
         <OutsideLink href='/#projects' openInNewTab={false}>
           projects section
         </OutsideLink>
         . Currently working at{' '}
-        <OutsideLink href='/#experience'>@Apptimia</OutsideLink>.
+        <OutsideLink href='/#experience'>@Apptimia</OutsideLink> where I develop
+        applications for robots.
       </motion.p>
       <motion.div
         animate='shown'
