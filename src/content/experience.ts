@@ -26,7 +26,7 @@ export const workItemsList: Omit<WorkItemProps, 'last' | 'number'>[] = [
     ],
   },
   {
-    position: 'Fullstack Developer (Python + Angular)',
+    position: 'Fullstack Engineer (Python + Angular)',
     companyName: 'Apptimia',
     companyUrl: 'https://apptimia.com',
     endDate: '2025',
@@ -56,7 +56,7 @@ export const workItemsList: Omit<WorkItemProps, 'last' | 'number'>[] = [
     ],
   },
   {
-    position: 'Frontend Developer (React + Electron)',
+    position: 'Software Engineer (React + Electron)',
     companyName: 'Apptimia',
     companyUrl: 'https://apptimia.com',
     endDate: '2024',
@@ -81,7 +81,7 @@ export const workItemsList: Omit<WorkItemProps, 'last' | 'number'>[] = [
     ],
   },
   {
-    position: 'Frontend Developer (Angular)',
+    position: 'Frontend Engineer (Angular)',
     companyName: 'Apptimia',
     companyUrl: 'https://apptimia.com',
     endDate: '2023',
