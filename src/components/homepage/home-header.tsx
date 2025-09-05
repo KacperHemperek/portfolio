@@ -46,7 +46,7 @@ export default function HomeHeader() {
       delay: TYPING_DELAY,
     });
     return controls.stop;
-  }, []);
+  }, [count, TYPING_DELAY]);
 
   return (
     <motion.header
