@@ -2,7 +2,7 @@ import { WorkItemProps } from '~/components/common/work-item';
 
 export const workItemsList: Omit<WorkItemProps, 'last' | 'number'>[] = [
   {
-    position: 'Software Engineer (Rotics)',
+    position: 'Software Engineer (Python)',
     companyName: 'Apptimia',
     companyUrl: 'https://apptimia.com',
     startDate: '2025',
@@ -56,7 +56,7 @@ export const workItemsList: Omit<WorkItemProps, 'last' | 'number'>[] = [
     ],
   },
   {
-    position: 'Software Engineer (React + Electron)',
+    position: 'Fullstack Engineer (React + Node)',
     companyName: 'Apptimia',
     companyUrl: 'https://apptimia.com',
     endDate: '2024',
@@ -81,7 +81,7 @@ export const workItemsList: Omit<WorkItemProps, 'last' | 'number'>[] = [
     ],
   },
   {
-    position: 'Frontend Engineer (Angular)',
+    position: 'Fullstack Engineer (Angular + Python)',
     companyName: 'Apptimia',
     companyUrl: 'https://apptimia.com',
     endDate: '2023',
@@ -94,6 +94,12 @@ export const workItemsList: Omit<WorkItemProps, 'last' | 'number'>[] = [
       'SASS',
       'Cypress',
       'NgRx',
+      'Python',
+      'Django',
+      'Postgres',
+      'Docker',
+      'REST APIs',
+      'AWS',
     ],
     list: [
       'Overhauled data flows with pagination, fragmented data loading, and debounced API requests to improve performance and streamline the buying process.',
