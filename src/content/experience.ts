@@ -99,7 +99,6 @@ export const workItemsList: Omit<WorkItemProps, 'last' | 'number'>[] = [
       'Postgres',
       'Docker',
       'REST APIs',
-      'AWS',
     ],
     list: [
       'Overhauled data flows with pagination, fragmented data loading, and debounced API requests to improve performance and streamline the buying process.',

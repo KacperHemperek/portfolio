@@ -26,7 +26,7 @@ function Cursor() {
 }
 
 export default function HomeHeader() {
-  const baseText = 'Hi my name is' as string;
+  const baseText = 'Hi my name is';
   const count = useMotionValue(0);
   const rounded = useTransform(count, (latest) => Math.round(latest));
   const displayText = useTransform(rounded, (latest) =>
@@ -69,7 +69,7 @@ export default function HomeHeader() {
       >
         Kacper Hemperek
         <br />
-        <span className=' text-white/60'>I build web apps</span>
+        <span className=' text-white/60'>I build stuff</span>
       </motion.h2>
       <motion.p
         key='description'
